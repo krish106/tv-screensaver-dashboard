@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/black" android:focusable="true">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="32dp">
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Weather Settings" android:textAppearance="@style/TextAppearance.Glance.Headline1" android:layout_marginBottom="24dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Weather displays automatically on your screensaver" android:textAppearance="@style/TextAppearance.Glance.Body1" android:layout_marginBottom="32dp"/>
+
+        <!-- Enable Weather Display -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="24dp" android:background="@drawable/bg_card_outlined" android:padding="0dp">
+
+            <!-- Show Weather Row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:padding="16dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Show Weather" android:textAppearance="@style/TextAppearance.Glance.Headline2"/>
+                <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchWeatherEnabled" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:focusable="true" app:thumbTint="@color/brand_orange" app:trackTint="@color/secondary_blue"/>
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/surface_light" android:alpha="0.1"/>
+
+            <!-- Show Icon Row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:padding="16dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Show Weather Icon" android:textAppearance="@style/TextAppearance.Glance.Headline2"/>
+                <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchWeatherIconEnabled" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:focusable="true" app:thumbTint="@color/brand_orange" app:trackTint="@color/secondary_blue"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Temperature Unit -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="24dp" android:background="@drawable/bg_card_outlined">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Temperature Unit" android:textAppearance="@style/TextAppearance.Glance.Headline2" android:layout_marginBottom="12dp"/>
+
+            <RadioGroup android:id="@+id/radioGroupTempUnit" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <RadioButton android:id="@+id/radioCelsius" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Celsius (°C)" android:textAppearance="@style/TextAppearance.Glance.Body1" android:textColor="@color/text_high_emphasis" android:checked="true" android:focusable="true" android:buttonTint="@color/brand_orange" android:layout_marginEnd="24dp"/>
+                <RadioButton android:id="@+id/radioFahrenheit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fahrenheit (°F)" android:textAppearance="@style/TextAppearance.Glance.Body1" android:textColor="@color/text_high_emphasis" android:focusable="true" android:buttonTint="@color/brand_orange"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- API Key Configuration (Not needed for Open-Meteo) -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="24dp" android:background="@drawable/bg_card_outlined">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Weather Provider" android:textAppearance="@style/TextAppearance.Glance.Headline2" android:layout_marginBottom="12dp"/>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Using Open-Meteo (Free for testing)" android:textColor="@color/brand_orange" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="No API Key required. Weather data is provided by Open-Meteo.com for non-commercial use." android:textColor="@color/text_medium_emphasis" android:textSize="12sp"/>
+        </LinearLayout>
+
+        <!-- Weather Position -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="24dp" android:background="@drawable/bg_card_outlined">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Weather Position" android:textAppearance="@style/TextAppearance.Glance.Headline2" android:layout_marginBottom="12dp"/>
+            <Spinner android:id="@+id/spinnerWeatherPosition" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/spinner_background" android:padding="8dp" android:focusable="true"/>
+        </LinearLayout>
+
+        <!-- Weather Text Customization -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="24dp" android:background="@drawable/bg_card_outlined">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Text Customization" android:textAppearance="@style/TextAppearance.Glance.Headline2" android:layout_marginBottom="16dp"/>
+
+            <!-- Font Style (Now follows Clock Style) -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Font Style follows Clock Settings" android:textAppearance="@style/TextAppearance.Glance.Body1" android:layout_marginBottom="16dp" android:textColor="@color/text_medium_emphasis" android:textStyle="italic"/>
+
+            <!-- Text Scale -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Text Size" android:textAppearance="@style/TextAppearance.Glance.Body1" android:layout_marginBottom="8dp"/>
+            <SeekBar android:id="@+id/seekBarWeatherScale" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="200" android:progress="100" android:progressTint="@color/brand_orange" android:thumbTint="@color/brand_orange" android:focusable="true"/>
+            <TextView android:id="@+id/tvWeatherScaleValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1.0x" android:textColor="@color/text_medium_emphasis" android:layout_gravity="end" android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+
+        <!-- Location Settings -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="24dp" android:background="@drawable/bg_card_outlined">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Location Settings" android:textAppearance="@style/TextAppearance.Glance.Headline2" android:layout_marginBottom="12dp"/>
+
+            <RadioGroup android:id="@+id/radioGroupLocation" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <RadioButton android:id="@+id/radioAutoLocation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Automatic (IP Geolocation)" android:textAppearance="@style/TextAppearance.Glance.Body1" android:textColor="@color/text_high_emphasis" android:buttonTint="@color/brand_orange" android:checked="true" android:layout_marginBottom="8dp"/>
+                <RadioButton android:id="@+id/radioManualLocation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Manual City Name" android:textAppearance="@style/TextAppearance.Glance.Body1" android:textColor="@color/text_high_emphasis" android:buttonTint="@color/brand_orange"/>
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/textInputLayoutCity" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:visibility="gone" app:boxBackgroundColor="@color/surface_dark" app:boxStrokeColor="@color/brand_orange" app:hintTextColor="@color/brand_orange" android:textColorHint="@color/text_medium_emphasis">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/editTextCity" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Enter City Name (e.g. London,UK)" android:textColor="@color/text_high_emphasis"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Current Weather Info -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="32dp" android:background="@drawable/bg_card_outlined">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Current Weather" android:textAppearance="@style/TextAppearance.Glance.Headline2" android:layout_marginBottom="12dp"/>
+            <TextView android:id="@+id/textCurrentWeather" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="⚡ Weather updates automatically every 15 minutes!\n\n💡 Click 'Test Update' to get current weather now." android:textAppearance="@style/TextAppearance.Glance.Body1" android:lineSpacingExtra="4dp"/>
+        </LinearLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="end">
+            <Button android:id="@+id/btnTestWeather" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Test Update" android:textAppearance="@style/TextAppearance.Glance.Button" android:background="@drawable/btn_orange_selector" android:textColor="@color/btn_text_color_selector" android:layout_marginEnd="12dp" android:paddingStart="24dp" android:paddingEnd="24dp" android:focusable="true" android:nextFocusRight="@id/btnSaveWeatherSettings"/>
+            <Button android:id="@+id/btnSaveWeatherSettings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Save Settings" android:textAppearance="@style/TextAppearance.Glance.Button" android:background="@drawable/btn_orange_selector" android:textColor="@color/btn_text_color_selector" android:paddingStart="24dp" android:paddingEnd="24dp" android:focusable="true" android:nextFocusLeft="@id/btnTestWeather"/>
+        </LinearLayout>
+
+        <!-- Info text -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="ℹ️ Weather uses your internet connection to automatically detect your location and display current conditions." android:textAppearance="@style/TextAppearance.Glance.Body2" android:alpha="0.6" android:layout_marginTop="24dp" android:lineSpacingExtra="2dp"/>
+
+    </LinearLayout>
+</ScrollView>

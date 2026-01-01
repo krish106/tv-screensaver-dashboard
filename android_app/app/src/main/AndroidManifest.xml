@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <uses-feature android:name="android.software.leanback" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+
+    <application android:allowBackup="true" android:dataExtractionRules="@xml/data_extraction_rules" android:fullBackupContent="@xml/backup_rules" android:icon="@drawable/ic_launcher" android:banner="@drawable/banner" android:label="My TV Screensaver" android:supportsRtl="true" android:theme="@style/Theme.TVScreensaver" android:usesCleartextTraffic="true" android:hardwareAccelerated="true" android:largeHeap="true" tools:targetApi="31">
+
+        <!-- AdMob App ID (Test ID - Replace with your real AdMob App ID before release) -->
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-3940256099942544~3347511713"/>
+
+        <activity android:name=".MainActivity" android:exported="true" android:label="Screensaver Settings" android:theme="@style/Theme.TVScreensaver">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+        <!-- Dream Service Declaration -->
+        <service android:name=".ScreensaverService" android:exported="true" android:label="My TV Screensaver" android:permission="android.permission.BIND_DREAM_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.dreams.DreamService" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="android.service.dream" android:resource="@xml/dream_service_config" />
+        </service>
+
+        <activity android:name=".PreviewActivity" android:label="Preview" android:theme="@style/Theme.TVScreensaver"/>
+        <activity android:name=".FolderBrowserActivity" android:label="Select Folder" android:theme="@style/Theme.TVScreensaver"/>
+
+    </application>
+
+</manifest>

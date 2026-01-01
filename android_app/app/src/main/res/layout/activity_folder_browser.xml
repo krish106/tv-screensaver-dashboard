@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="16dp" android:background="@color/background_dark">
+
+    <TextView android:id="@+id/tvCurrentPath" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="/storage/emulated/0" android:textColor="@android:color/white" android:textSize="18sp" android:padding="8dp" android:background="@drawable/card_background" android:layout_marginBottom="16dp"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+
+        <Button android:id="@+id/btnUp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⬆ Up" android:layout_marginEnd="16dp" android:background="@drawable/btn_primary_selector" android:textColor="@color/btn_text_color_selector"/>
+
+        <Button android:id="@+id/btnSelect" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Select This Folder" android:background="@drawable/btn_orange_selector" android:textColor="@color/btn_text_color_selector"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvFiles" android:layout_width="match_parent" android:layout_height="match_parent"/>
+
+</LinearLayout>
