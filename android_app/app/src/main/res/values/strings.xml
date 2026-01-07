@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Glance</string>
-    <string name="menu_subscription">Premium Subscription</string>
-    <string name="menu_weather_settings">Weather Settings</string>
-    <!-- Test Ad Unit ID - Replace with your real Ad Unit ID before release -->
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
-</resources>
